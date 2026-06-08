@@ -727,6 +727,14 @@ section { padding: 64px 60px; }
   z-index: 0;
   pointer-events: none;
 }
+.handshake-lines {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 300px; height: 100px;
+  z-index: 0;
+  pointer-events: none;
+}
 .hs-wire {
   stroke: #475569;
   stroke-width: 1px;
@@ -735,7 +743,9 @@ section { padding: 64px 60px; }
 }
 .handshake-nodes {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 300px; height: 100px;
   z-index: 1;
 }
 .hs-node {
@@ -749,9 +759,9 @@ section { padding: 64px 60px; }
   cursor: pointer;
   transform: translate(-50%, -50%);
 }
-.hs-node:nth-child(1) { top: 50px; left: calc(50% - 100px); }
-.hs-node:nth-child(2) { top: 50px; left: 50%; }
-.hs-node:nth-child(3) { top: 50px; left: calc(50% + 100px); }
+.hs-node:nth-child(1) { top: 50px; left: 50px; }
+.hs-node:nth-child(2) { top: 50px; left: 150px; }
+.hs-node:nth-child(3) { top: 50px; left: 250px; }
 
 .hs-dot {
   width: 12px;

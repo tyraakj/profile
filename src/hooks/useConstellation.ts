@@ -60,6 +60,7 @@ export function useConstellation(heroUiId: string) {
     }
 
     function init() {
+      if (!canvas) return;
       const hero = canvas.parentElement!;
       W = canvas.width = hero.clientWidth || window.innerWidth;
       H = canvas.height = hero.clientHeight || window.innerHeight;
@@ -211,6 +212,7 @@ export function useConstellation(heroUiId: string) {
     }
 
     function onMouseMove(e: MouseEvent) {
+      if (!canvas) return;
       const r = canvas.getBoundingClientRect();
       mouse.x = e.clientX - r.left;
       mouse.y = e.clientY - r.top;
