@@ -1,7 +1,7 @@
 export const meta = {
-  name: "Tyra K. Javed",
+  name: "Tyra Javed",
   title: "Full Stack Engineer",
-  subtitle: "AI · Backend · Web3",
+  subtitle: "AI · Web3",
   location: "Mumbai, India",
   coords: "19.0760° N / 72.8777° E",
   email: "tyra191712@gmail.com",
@@ -15,7 +15,7 @@ export const about = {
   headline: ["Full Stack", "Engineer."],
   accent: "Engineer.",
   body: [
-    "I build distributed systems, AI-integrated platforms, and Web3 infrastructure — backend-first, product-minded. Currently a BCA student at Somaiya Vidyavihar University (GPA: 10.0/10.0).",
+    "I build distributed systems, AI-integrated platforms, and Web3 infrastructure — backend-first, product-minded.",
     "My stack spans Spring Boot microservices with Kafka and Redis, LangChain/LangGraph multi-agent systems, Solidity smart contracts on Base, and React frontends. I care about correctness, security, and shipping things that actually work.",
     "Near-term: backend or full-stack internships. Long-term: AI engineering and data infrastructure. Working remotely from Mumbai.",
   ],

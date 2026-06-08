@@ -1,9 +1,9 @@
 export default function Skills() {
   return (
     <section id="skills">
-      <div className="section-label">System Architecture Flow</div>
+      <div className="section-label">Tech Stack</div>
       <div className="arch-flow-wrapper">
-        
+
         {/* Animated Background Data Routes */}
         <div className="arch-routes-layer">
           <svg className="data-routes" width="100%" height="100%" preserveAspectRatio="none">
@@ -11,7 +11,7 @@ export default function Skills() {
             <path d="M 0,30 L 1000,30" className="route-wire" vectorEffect="non-scaling-stroke" />
             <path d="M 0,60 L 1000,60" className="route-wire" vectorEffect="non-scaling-stroke" />
             <path d="M 0,90 L 1000,90" className="route-wire" vectorEffect="non-scaling-stroke" />
-            
+
             {/* Animated Data Packets (using dasharray to simulate packets) */}
             <path d="M 0,30 L 1000,30" className="route-packet p1" vectorEffect="non-scaling-stroke" />
             <path d="M 0,60 L 1000,60" className="route-packet p2" vectorEffect="non-scaling-stroke" />
