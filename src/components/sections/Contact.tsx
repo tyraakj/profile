@@ -30,27 +30,6 @@ export default function Contact() {
     <section id="contact">
       <div className="section-label">Contact Me</div>
 
-      {/* Handshake Map */}
-      <div className="handshake-network">
-        <svg className="handshake-lines" preserveAspectRatio="none" viewBox="0 0 300 100">
-          <path d="M 50,50 L 150,50 L 250,50" className="hs-wire" />
-          <path d="M 150,50 L 150,100" className="hs-wire" />
-        </svg>
-        <div className="handshake-nodes">
-          <button className="hs-node" onClick={() => executeCommand("email", `mailto:${meta.email}`)}>
-            <div className="hs-dot"></div>
-            <span className="hs-label">Email</span>
-          </button>
-          <button className="hs-node" onClick={() => executeCommand("github", meta.github)}>
-            <div className="hs-dot"></div>
-            <span className="hs-label">GitHub</span>
-          </button>
-          <button className="hs-node" onClick={() => executeCommand("linkedin", meta.linkedin)}>
-            <div className="hs-dot"></div>
-            <span className="hs-label">LinkedIn</span>
-          </button>
-        </div>
-      </div>
 
       {/* Executable Terminal */}
       <div className="cli-terminal">
