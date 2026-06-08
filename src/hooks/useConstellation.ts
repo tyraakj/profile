@@ -13,7 +13,7 @@ export function useConstellation(heroUiId: string) {
     let W: number, H: number;
     let nodes: any[] = [], edges: any[] = [], bgStars: any[] = [];
     let rotY = 0, tiltX = 0, camAngle = 0;
-    let scattered = false, assembling = false;
+    let scattered = false;
     let allArrived = false;
     let mouse = { x: 0, y: 0 };
     let t = 0, edgeFadeIn = 0;
@@ -235,7 +235,6 @@ export function useConstellation(heroUiId: string) {
         if (ui) gsap.to(ui, { opacity: 0, duration: 0.3 });
       } else {
         scattered = false;
-        assembling = true;
         nodes.forEach((n) => { n.delay = 0; });
         const ui = document.getElementById(heroUiId);
         if (ui) gsap.to(ui, { opacity: 1, duration: 0.8, delay: 1.5 });
