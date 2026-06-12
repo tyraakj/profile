@@ -1,102 +1,94 @@
+import { useState } from "react";
+
+const stack = [
+  {
+    id: "frontend",
+    label: "Client Edge",
+    index: "01",
+    color: "#38BDF8",
+    primary: ["React", "Next.js", "React Native"],
+    supporting: ["TypeScript", "JavaScript", "Vercel"],
+  },
+  {
+    id: "backend",
+    label: "API Layer",
+    index: "02",
+    color: "#C2255C",
+    primary: ["Spring Boot", "FastAPI"],
+    supporting: ["Java", "Python", "Spring Security"],
+  },
+  {
+    id: "ai",
+    label: "AI & Data",
+    index: "03",
+    color: "#A78BFA",
+    primary: ["LangChain", "LangGraph", "watsonx.ai"],
+    supporting: ["FAISS", "PostgreSQL", "Supabase", "NeonDB"],
+  },
+  {
+    id: "infra",
+    label: "Infrastructure",
+    index: "04",
+    color: "#0D9488",
+    primary: ["Apache Kafka", "Redis", "Docker"],
+    supporting: ["AWS S3", "Railway"],
+  },
+  {
+    id: "blockchain",
+    label: "Web3",
+    index: "05",
+    color: "#34D399",
+    primary: ["Solidity", "Base L2"],
+    supporting: ["ethers.js", "OpenZeppelin", "ERC-3009"],
+  },
+];
+
 export default function Skills() {
+  const [hoveredCat, setHoveredCat] = useState<string | null>(null);
+
   return (
     <section id="skills">
       <div className="section-label">Tech Stack</div>
-      <div className="arch-flow-wrapper">
 
-        {/* Animated Background Data Routes */}
-        <div className="arch-routes-layer">
-          <svg className="data-routes" width="100%" height="100%" preserveAspectRatio="none">
-            {/* Base Wireframes */}
-            <path d="M 0,30 L 1000,30" className="route-wire" vectorEffect="non-scaling-stroke" />
-            <path d="M 0,60 L 1000,60" className="route-wire" vectorEffect="non-scaling-stroke" />
-            <path d="M 0,90 L 1000,90" className="route-wire" vectorEffect="non-scaling-stroke" />
+      {/* Signal Flow Line */}
+      <div className="stack-signal">
+        <div className="signal-line" />
+        <div className="signal-dot d1" />
+        <div className="signal-dot d2" />
+        <div className="signal-dot d3" />
+      </div>
 
-            {/* Animated Data Packets (using dasharray to simulate packets) */}
-            <path d="M 0,30 L 1000,30" className="route-packet p1" vectorEffect="non-scaling-stroke" />
-            <path d="M 0,60 L 1000,60" className="route-packet p2" vectorEffect="non-scaling-stroke" />
-            <path d="M 0,90 L 1000,90" className="route-packet p3" vectorEffect="non-scaling-stroke" />
-          </svg>
-        </div>
-
-        <div className="arch-grid">
-          <div className="arch-layer">
-            <div className="layer-title">01. Client Edge</div>
-            <div className="arch-node-group">
-              <div className="arch-node">React & Next.js</div>
-              <div className="arch-tags">
-                <span>TypeScript</span>
-                <span>JavaScript</span>
-                <span>Vercel</span>
-              </div>
+      <div className="stack-grid">
+        {stack.map((cat, i) => (
+          <div
+            key={cat.id}
+            className={`stack-card${hoveredCat === cat.id ? " active" : ""}${hoveredCat && hoveredCat !== cat.id ? " dimmed" : ""}`}
+            style={{ "--cat-color": cat.color, "--card-i": i } as React.CSSProperties}
+            onMouseEnter={() => setHoveredCat(cat.id)}
+            onMouseLeave={() => setHoveredCat(null)}
+          >
+            <div className="stack-card-glow" />
+            <div className="stack-card-header">
+              <div className="stack-card-dot" />
+              <span className="stack-card-index">{cat.index}</span>
+              <span className="stack-card-label">{cat.label}</span>
             </div>
-            <div className="arch-node-group">
-              <div className="arch-node">React Native</div>
+            <div className="stack-primary-nodes">
+              {cat.primary.map((tech) => (
+                <div key={tech} className="stack-node">
+                  {tech}
+                </div>
+              ))}
+            </div>
+            <div className="stack-supporting">
+              {cat.supporting.map((tag) => (
+                <span key={tag} className="stack-stag">
+                  {tag}
+                </span>
+              ))}
             </div>
           </div>
-
-          <div className="arch-layer">
-            <div className="layer-title">02. API Gateway</div>
-            <div className="arch-node-group">
-              <div className="arch-node">Spring Boot</div>
-              <div className="arch-tags">
-                <span>Java</span>
-                <span>Spring Security</span>
-              </div>
-            </div>
-            <div className="arch-node-group">
-              <div className="arch-node">FastAPI</div>
-              <div className="arch-tags">
-                <span>Python</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="arch-layer">
-            <div className="layer-title">03. Event Broker & Infra</div>
-            <div className="arch-node-group">
-              <div className="arch-node highlight-node">Apache Kafka</div>
-              <div className="arch-tags">
-                <span>Docker</span>
-                <span>Railway</span>
-              </div>
-            </div>
-            <div className="arch-node-group">
-              <div className="arch-node">Redis</div>
-              <div className="arch-tags">
-                <span>AWS S3</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="arch-layer">
-            <div className="layer-title">04. Compute & Storage</div>
-            <div className="arch-node-group">
-              <div className="arch-node">IBM watsonx.ai</div>
-              <div className="arch-tags">
-                <span>LangChain</span>
-                <span>LangGraph</span>
-                <span>FAISS</span>
-              </div>
-            </div>
-            <div className="arch-node-group">
-              <div className="arch-node">PostgreSQL / Neon</div>
-              <div className="arch-tags">
-                <span>SQL</span>
-                <span>Supabase</span>
-              </div>
-            </div>
-            <div className="arch-node-group">
-              <div className="arch-node web3-node">Base L2 (Solidity)</div>
-              <div className="arch-tags">
-                <span>ethers.js</span>
-                <span>OpenZeppelin</span>
-                <span>ERC-3009</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        ))}
       </div>
     </section>
   );
