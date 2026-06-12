@@ -224,6 +224,26 @@ nav {
 .btn-outline:hover {
   background: rgba(13, 148, 136, 0.1); transform: translateY(-2px);
 }
+.btn-resume {
+  border: 1px solid rgba(226,232,240,0.18); color: var(--text);
+  background: rgba(226,232,240,0.04);
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-resume:hover {
+  background: rgba(226,232,240,0.12);
+  border-color: rgba(226,232,240,0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px rgba(226,232,240,0.08);
+}
+.resume-icon {
+  display: inline-block;
+  font-size: 16px;
+  animation: bobDown 2s ease-in-out infinite;
+}
+@keyframes bobDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(3px); }
+}
 .hero-right {
   text-align: right; font-family: 'Geist Mono', monospace;
   font-size: 14px; color: var(--dim); line-height: 2.2;

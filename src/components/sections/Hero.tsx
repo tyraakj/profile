@@ -39,6 +39,9 @@ export default function Hero() {
             <div className="hero-cta-wrap">
               <a href="#projects" className="btn btn-filled">View Work</a>
               <a href="#contact" className="btn btn-outline">Get in Touch</a>
+              <a href="/Tyra_Javed_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-resume">
+                <span className="resume-icon">↓</span> Resume
+              </a>
             </div>
           </div>
           <div className="hero-right">
